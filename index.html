@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MONUMENT — Architectural Real Estate</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- PORTFOLIO NOTICE BANNER -->
+    <aside class="demo-banner">
+        <p><strong>PORTFOLIO DEMO:</strong> MONUMENT is a fictional architectural real estate platform created for design demonstration purposes.</p>
+    </aside>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="site-header" id="site-header">
+        <div class="nav-container">
+            <a href="#" class="brand-logo">MONUMENT</a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#properties" class="nav-link">Properties</a>
+                <a href="#collections" class="nav-link">Collections</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#journal" class="nav-link">Journal</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="#contact" class="btn btn-outline">Enquire</a>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85" alt="Modern Minimalist Villa">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <span class="eyebrow-label">MONUMENT REAL ESTATE</span>
+            <h1 class="hero-title">Spaces worth living in.</h1>
+            <a href="#search-section" class="hero-cta">
+                <span>Explore properties</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+        </div>
+        <div class="hero-scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- PROPERTY SEARCH & FILTERS -->
+    <section class="search-section" id="search-section">
+        <div class="container">
+            <form class="search-bar" id="search-form">
+                <div class="filter-group">
+                    <label for="filter-location">Location</label>
+                    <select id="filter-location">
+                        <option value="all">All Locations</option>
+                        <option value="zurich">Zurich, Switzerland</option>
+                        <option value="kyoto">Kyoto, Japan</option>
+                        <option value="los-angeles">Los Angeles, USA</option>
+                        <option value="oslo">Oslo, Norway</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="filter-type">Property Type</label>
+                    <select id="filter-type">
+                        <option value="all">All Types</option>
+                        <option value="villa">Villa</option>
+                        <option value="residence">Residence</option>
+                        <option value="penthouse">Penthouse</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="filter-price">Max Price</label>
+                    <select id="filter-price">
+                        <option value="all">Any Price</option>
+                        <option value="5000000">Up to $5,000,000</option>
+                        <option value="10000000">Up to $10,000,000</option>
+                        <option value="15000000">Up to $15,000,000</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="filter-bedrooms">Bedrooms</label>
+                    <select id="filter-bedrooms">
+                        <option value="all">Any Bedrooms</option>
+                        <option value="3">3+ Bedrooms</option>
+                        <option value="4">4+ Bedrooms</option>
+                        <option value="5">5+ Bedrooms</option>
+                    </select>
+                </div>
+
+                <div class="filter-group button-group">
+                    <button type="submit" class="btn btn-solid">Filter Results</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FEATURED PROPERTIES -->
+    <section class="properties-section" id="properties">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <span class="section-tag">SELECTED PORTFOLIO</span>
+                    <h2 class="section-title">Featured Residences</h2>
+                </div>
+                <div class="properties-count" id="properties-count">Showing 4 Properties</div>
+            </div>
+
+            <div class="properties-grid" id="properties-grid">
+                <!-- Dynamically populated via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE PROPERTY DETAIL MODAL -->
+    <div class="modal-backdrop" id="property-modal">
+        <div class="modal-container">
+            <button class="modal-close" id="modal-close" aria-label="Close Modal">&times;</button>
+            <div class="modal-content" id="modal-content">
+                <!-- Dynamically injected via JS when clicking 'View Property' -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ARCHITECTURAL COLLECTIONS -->
+    <section class="collections-section" id="collections">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">CURATED CATEGORIES</span>
+                <h2 class="section-title">Architectural Collections</h2>
+            </div>
+
+            <div class="collections-grid">
+                <article class="collection-card">
+                    <div class="collection-image">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80" alt="Contemporary Architecture">
+                        <span class="collection-number">01</span>
+                    </div>
+                    <div class="collection-info">
+                        <h3>Contemporary</h3>
+                        <p>Monolithic structures focusing on structural concrete, open spans, and seamless indoor-outdoor transitions.</p>
+                    </div>
+                </article>
+
+                <article class="collection-card">
+                    <div class="collection-image">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=80" alt="Coastal Real Estate">
+                        <span class="collection-number">02</span>
+                    </div>
+                    <div class="collection-info">
+                        <h3>Coastal</h3>
+                        <p>Cliffside homes and waterfront sanctuaries engineered to withstand and celebrate marine environments.</p>
+                    </div>
+                </article>
+
+                <article class="collection-card">
+                    <div class="collection-image">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1000&q=80" alt="Urban Penthouses">
+                        <span class="collection-number">03</span>
+                    </div>
+                    <div class="collection-info">
+                        <h3>Urban</h3>
+                        <p>Elevated penthouse living in major architectural capitals, featuring panoramic horizons and private sky gardens.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-title-col">
+                    <span class="section-tag">THE FIRM</span>
+                    <h2 class="section-title">Curating spaces of enduring clarity.</h2>
+                </div>
+                <div class="about-text-col">
+                    <p class="lead-text">
+                        MONUMENT operates at the intersection of modern architectural studio and boutique luxury property agency.
+                    </p>
+                    <p>
+                        We represent residences that prioritize material authenticity, spatial precision, and harmony with site geography. Rather than treating real estate purely as commodities, we view properties as permanent human sanctuaries.
+                    </p>
+                    
+                    <div class="demo-disclaimer-box">
+                        <p><strong>Portfolio Notice:</strong> MONUMENT is a concept web application developed to demonstrate minimalist UI engineering, dynamic client-side state handling, and structured layout systems for modern businesses.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JOURNAL / EDITORIAL -->
+    <section class="journal-section" id="journal">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">PERSPECTIVES</span>
+                <h2 class="section-title">Architectural Journal</h2>
+            </div>
+
+            <div class="journal-grid">
+                <article class="journal-card">
+                    <div class="journal-meta">
+                        <span class="journal-date">OCTOBER 2026</span>
+                        <span class="journal-category">ESSAY</span>
+                    </div>
+                    <h3 class="journal-title">Designing spaces around natural light</h3>
+                    <p class="journal-excerpt">How solar orientation and sculpted concrete apertures dictate internal rhythm and psychological tranquility.</p>
+                    <a href="#journal" class="journal-link">Read article →</a>
+                </article>
+
+                <article class="journal-card">
+                    <div class="journal-meta">
+                        <span class="journal-date">SEPTEMBER 2026</span>
+                        <span class="journal-category">THEORY</span>
+                    </div>
+                    <h3 class="journal-title">Why architecture changes how we live</h3>
+                    <p class="journal-excerpt">An investigation into spatial volume, raw materials, and their subconscious influence on daily human routine.</p>
+                    <a href="#journal" class="journal-link">Read article →</a>
+                </article>
+
+                <article class="journal-card">
+                    <div class="journal-meta">
+                        <span class="journal-date">AUGUST 2026</span>
+                        <span class="journal-category">STUDIO</span>
+                    </div>
+                    <h3 class="journal-title">Inside contemporary residential design</h3>
+                    <p class="journal-excerpt">A conversation with minimalist architects on stripping away ornamentation in favor of tectonic truth.</p>
+                    <a href="#journal" class="journal-link">Read article →</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ENQUIRY / CONTACT -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <span class="section-tag">ACQUISITIONS</span>
+                    <h2 class="section-title">Initiate an Enquiry</h2>
+                    <p>Connect with our architectural advisors for private viewings, representation queries, or portfolio discussions.</p>
+                    
+                    <div class="contact-details">
+                        <div class="detail-item">
+                            <span class="detail-label">HEADQUARTERS</span>
+                            <span class="detail-value">Bahnhofstrasse 42, Zurich</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">DIRECT PHONE</span>
+                            <span class="detail-value">+41 44 211 00 00</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">ELECTRONIC MAIL</span>
+                            <span class="detail-value">enquiries@monument-realestate.demo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contact-form" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="form-name">FULL NAME *</label>
+                                <input type="text" id="form-name" required placeholder="Alexander Vance">
+                                <span class="error-msg" id="err-name">Please enter your name</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-email">EMAIL ADDRESS *</label>
+                                <input type="email" id="form-email" required placeholder="alexander@example.com">
+                                <span class="error-msg" id="err-email">Please enter a valid email</span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="form-phone">PHONE NUMBER</label>
+                                <input type="tel" id="form-phone" placeholder="+1 (555) 000-0000">
+                            </div>
+                            <div class="form-group">
+                                <label for="form-property">PROPERTY OF INTEREST</label>
+                                <select id="form-property">
+                                    <option value="general">General Enquiry</option>
+                                    <option value="1">The Concrete Horizon Residence</option>
+                                    <option value="2">Kyoto Forest Pavilion</option>
+                                    <option value="3">Bel Air Monolith</option>
+                                    <option value="4">Nordic Fjord Sanctuary</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="form-message">MESSAGE *</label>
+                            <textarea id="form-message" rows="4" required placeholder="Specify viewing preferences or architectural parameters..."></textarea>
+                            <span class="error-msg" id="err-message">Please enter your message</span>
+                        </div>
+
+                        <button type="submit" class="btn btn-solid btn-block">Submit Private Enquiry</button>
+                        
+                        <p class="form-disclaimer">
+                            * Demo interaction only. No actual personal data or messages are transmitted to a live server.
+                        </p>
+                    </form>
+
+                    <div class="form-success" id="form-success">
+                        <div class="success-icon">✓</div>
+                        <h3>Enquiry Received</h3>
+                        <p>Thank you for contacting MONUMENT. An advisory partner will review your inquiry shortly.</p>
+                        <button type="button" class="btn btn-outline" id="btn-reset-form">Send Another Message</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="brand-logo">MONUMENT</a>
+                    <p>Architectural Real Estate Portfolio</p>
+                </div>
+
+                <div class="footer-nav">
+                    <span class="footer-heading">NAVIGATION</span>
+                    <ul>
+                        <li><a href="#properties">Properties</a></li>
+                        <li><a href="#collections">Collections</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#journal">Journal</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-social">
+                    <span class="footer-heading">SOCIAL</span>
+                    <ul>
+                        <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+                        <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+                        <li><a href="#" target="_blank" rel="noopener">Pinterest</a></li>
+                        <li><a href="#" target="_blank" rel="noopener">Architectural Digest</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-back-top">
+                    <button id="back-to-top" class="back-top-btn" aria-label="Back to top">
+                        <span>Back to top</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 MONUMENT Real Estate. Fictional Portfolio Project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
